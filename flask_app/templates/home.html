@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Studios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="bg-black text-light">
+    <!-- Navbar section -->
+    <nav class="navbar navbar-dark navbar-expand-md">
+        <div class="container-md">
+            <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='img/logos/microphone_white.png') }}" alt="studio logo"
+                    class="me-3">
+                Booking Studios
+            </a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-decoration-underline">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/studios">Studios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/availability">Availability</a>
+                    </li>
+                    <a href="/booking" class="btn btn-outline-primary" type="button">Book Now!</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header section -->
+    <header class="container-fluid bg-dark pt-5">
+        <h1 class="text-center pb-5">San Francisco Recording Studio & Audio Production</h1>
+        <!-- <div class="container-md"> -->
+            <div id="carouselExampleIndicators" class="carousel slide w-100" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner w-100">
+                    <div class="carousel-item active">
+                        <img src="{{ url_for('static', filename='img/photos/lg_studio_a_engineer.jpg') }}" class="d-block w-100" alt="Studio A and engineer">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='img/photos/lg_studio_b.jpg') }}" class="d-block w-100" alt="Studio B">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ url_for('static', filename='img/photos/lg_studio_c.jpg') }}" class="d-block w-100" alt="Studio C">
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+    </header>
+
+    <!-- Studio booking intro -->
+    <div class="container-fluid bg-dark py-5">
+        <div class="container-md">
+            <div class="row align-items-center justify-content-between flex-row-reverse">
+                <div class="col-lg-5 col-12">
+                    <h2 class="text-center">The Bay's Exalted Recording Studios</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate perferendis assumenda velit aut culpa repudiandae. Eaque similique, animi quibusdam omnis accusamus modi aperiam laboriosam libero praesentium pariatur. Amet, quisquam ullam!
+                    Dolorum aspernatur fuga, molestiae nihil velit nesciunt ex minima consequuntur exercitationem asperiores, rerum ipsum veniam sint! Aliquam obcaecati modi eum maiores expedita aspernatur, saepe, vitae possimus, hic nemo fugit dolores.
+                    Repellat, neque tempora? Dolores nemo nulla facere aliquid eius aperiam doloribus consequuntur! Velit, rerum reprehenderit? Nam saepe quidem architecto esse vitae harum velit facilis, earum quae corporis facere, molestiae delectus.
+                    Sequi necessitatibus rerum quaerat est amet tempora doloribus laborum ea nobis nihil quibusdam earum ipsa perferendis repellendus corporis maxime, iusto mollitia distinctio culpa. Amet animi aperiam cum provident, ipsum eos?
+                    Nihil nam illum dolor adipisci, dolorum fugit, reiciendis ipsa numquam eos pariatur explicabo, eveniet ut itaque tempora architecto. Beatae porro suscipit ratione blanditiis, illo earum sequi sed quia consectetur! At.</p>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <img class="img-fluid" src="{{ url_for('static', filename='img/photos/md_studio_c_session.jpg') }}"
+                        alt="Studio C in session">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Past clients section -->
+    <div class="container-fluid bg-light text-black py-5">
+        <div class="container-md">
+            <div class="row">
+                <h2 class="text-center">Our clients include...</h2>
+            </div>
+            <div class="row justify-content-between">
+                <img class="img-fluid col-3 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/activision-blizzard.png') }}" alt="activision-blizzard">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/amoeba.png') }}" alt="amoeba">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/apple.png') }}" alt="apple">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/airbnb.png') }}" alt="airbnb">
+                <img class="img-fluid col-3 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/ea-sports.png') }}" alt="ea-sports">
+                <img class="img-fluid col-3 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/empire.png') }}" alt="empire">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/giants.png') }}" alt="giants">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/google.png') }}" alt="google">
+                <img class="img-fluid col-3 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/meta.png') }}" alt="meta">
+                <img class="img-fluid col-2 col-lg-1 my-auto py-3" src="{{ url_for('static', filename='img/logos/twitter.png') }}" alt="twitter">
+            </div>
+        </div>
+    </div>
+
+    <!-- Studio booking more info -->
+    <div class="container-fluid bg-dark py-5">
+        <div class="container-md">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-5 col-12">
+                    <h2 class="text-center">More Info</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id deleniti voluptas illum. Quam eum
+                        quia
+                        blanditiis cupiditate aut fuga, nesciunt deserunt minima? Dolor, aspernatur? Tenetur natus
+                        aspernatur unde blanditiis dolore? Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                        deleniti voluptas illum. Quam eum quia blanditiis cupiditate aut fuga, nesciunt deserunt minima?
+                        Dolor, aspernatur? Tenetur natus aspernatur unde blanditiis dolore? Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Id deleniti voluptas illum. Quam eum quia blanditiis cupiditate
+                        aut
+                        fuga, nesciunt deserunt minima? Dolor, aspernatur? Tenetur natus aspernatur unde blanditiis
+                        dolore?</p>
+                </div>
+                <div class="col-lg-5 col-12">
+                    <img class="img-fluid" src="{{ url_for('static', filename='img/photos/lg_live_room1.jpg') }}"
+                        alt="Studio C in session">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer section -->
+    <footer class="container-fluid bg-black py-5">
+        <div class="container-lg">
+            <div class="row justify-content-between">
+
+                <!-- Contact form -->
+                <div class="col-lg-4 col-12 flex-column pb-5">
+                    <h3 class="text-center pb-3">Contact Us!</h3>
+
+                    <form class="text-secondary col-lg-12 col-6 mx-auto" action="#" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="name" placeholder="Name">
+                            <label for="name">Name</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                                style="height: 100px"></textarea>
+                            <label for="floatingTextarea2">Inquiry</label>
+                        </div>
+
+                        <!-- Insert captcha here -->
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+                </div>
+
+                <div class="col-lg-4 col-12 pb-5">
+                    <h3 class="text-center pb-3">Sitemap</h3>
+                    <div class="row">
+                        <div class="col-auto mx-auto d-flex flex-column">
+                            <a href="/about" class="text-lg-start text-center">About Us</a>
+                            <a href="/studios" class="text-lg-start text-center">Studios & Spaces</a>
+                            <a href="/services" class="text-lg-start text-center">Services Offered</a>
+                            <a href="/faq" class="text-lg-start text-center">Frequently Asked Questions</a>
+                            <a href="/availability" class="text-lg-start text-center">Booking Availabilty</a>
+                            <a href="/booking" class="text-lg-start text-center">Booking Links</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-12">
+                    <h3 class="text-center pb-3">Contact Booking Studios</h3>
+                    <div class="row justify-content-end">
+                        <div class="col-auto mx-auto d-flex flex-column">
+                            <a href="#" class="mb-2 text-lg-start text-center">Booking Studios, LLC<br>4321 Signal Flow Lane<br>San Francisco, CA
+                                94104</a>
+                            <a href="#" class="mb-2 text-lg-start text-center">415-555-6789 x200</a>
+                            <a href="#" class="text-lg-start text-center">noreply@bookingstudios.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

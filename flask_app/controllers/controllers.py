@@ -10,8 +10,38 @@ from flask_app.models.model import Model
 
 # ---------- Home Page -----------
 @app.route("/")
-def index():
-    return render_template('index.html')
+def get_home():
+    return render_template('home.html')
+
+# ---------- About Page -----------
+@app.route("/about")
+def get_about():
+    return render_template('about.html')
+
+# ---------- Studios Page -----------
+@app.route("/studios")
+def get_studios():
+    return render_template('studios.html')
+
+# ---------- Services Page -----------
+@app.route("/services")
+def get_services():
+    return render_template('services.html')
+
+# ---------- FAQ Page -----------
+@app.route("/faq")
+def get_faq():
+    return render_template('faq.html')
+
+# ---------- Availability Page -----------
+@app.route("/availability")
+def get_availability():
+    return render_template('availability.html')
+
+# ---------- Booking Page -----------
+@app.route("/booking")
+def get_booking():
+    return render_template('booking.html')
 
 
 # ---------- Models (all) Page -----------

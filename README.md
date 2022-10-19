@@ -1,6 +1,7 @@
 # Studio Booking App (Demo)
 
-This application is a concept project for music and recording studios to be able to book and schedule clients in respective control and live rooms.
-The booking process will entirely automated, and integrate with existing resources and calendars with Google Workspace resourses, via Google Calendar API.
+This application is a concept project for music and recording studios to be able to book and schedule clients in respective control and live rooms. The goal is to have an entirely automated booking process, with integrations with a payment service and Google Calendar API.
 
-v1 of the project will be completed by Oct 21, 2022. This project was created with Python and Flask.
+This was a real-world need while I worked at Pyramind Studios in San Francisco for nearly 4 years, and all booking and payments were scheduled manually by staff. The problem with other booking services is that the duration of the booking/appointment is always static, and studio rentals and bookings are almost always of variable durations, ranging from 2 hours to an entire day of rental. I intend to reflect that in the finished version of my app.
+
+Version 1.0 of the project will be completed by Oct 21, 2022. This project was created with Python and Flask.

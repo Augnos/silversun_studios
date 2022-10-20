@@ -1,4 +1,4 @@
-# Studio Booking App (Demo)
+# Silversun Studios (Demo)
 
 This application is a concept project for music and recording studios to be able to book and schedule clients in respective control and live rooms. The goal is to have an entirely automated booking process, with integrations with a payment service and Google Calendar API.
 

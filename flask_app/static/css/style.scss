@@ -1,7 +1,11 @@
-// $theme-colors: (
-//     "primary":  lavender,
-//     "secondary": teal,
-//     "danger": purple,
-// );
-
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+$theme-colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": #b826eb,
+    "danger": $danger,
+    "light": $light,
+    "dark": $dark);

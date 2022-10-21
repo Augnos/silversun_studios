@@ -79,15 +79,12 @@
       <div class="row flex-row-reverse justify-content-between">
 
         <!-- Booking Form -->
-        <form action="#" method="post" class="col-lg-5 col-12 pb-5">
+        <form action="/insert/booking" method="post" class="col-lg-5 col-12 pb-5">
 
           <!-- Contact Info -->
           <div class="row mb-3">
             <div class="col">
-              <input name="first_name" type="text" class="form-control" placeholder="First name" aria-label="First name">
-            </div>
-            <div class="col">
-              <input name="last_name" type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+              <input name="name" type="text" class="form-control" placeholder="First and last name" aria-label="name">
             </div>
           </div>
           <div class="row mb-3">
@@ -102,31 +99,31 @@
             <div class="col-sm-6">
               <legend class="col-form-label col-sm-10 pt-0">Select Studio</legend>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="studio" id="studio_a" value="a" checked>
+                <input class="form-check-input" type="radio" name="studio" id="studio_a" value="studio_a" checked>
                 <label class="form-check-label" for="studio_a">
                   Studio A
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="studio" id="studio_b" value="b">
+                <input class="form-check-input" type="radio" name="studio" id="studio_b" value="studio_b">
                 <label class="form-check-label" for="studio_b">
                   Studio B
                 </label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="studio" id="studio_c" value="c">
+                <input class="form-check-input" type="radio" name="studio" id="studio_c" value="studio_c">
                 <label class="form-check-label" for="studio_c">
                   Studio C
                 </label>
               </div>
-              <div class="col-sm-10 mb-3">
+              <!-- <div class="col-sm-10 mb-3">
                 <div class="form-check">
                   <input name="live_room" class="form-check-input" type="checkbox" id="live_room">
                   <label class="form-check-label" for="live_room">
                     Live Room
                   </label>
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <div class="col-sm-6">

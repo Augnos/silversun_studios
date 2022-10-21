@@ -1,6 +1,6 @@
 from flask import render_template, redirect, request
 from flask_app import app
-from flask_app.models.booking import Booking
+from flask_app.models.booking import Booking, studio_calendar
 
 
 # -----------------------------------------------------
@@ -9,50 +9,62 @@ from flask_app.models.booking import Booking
 
 # ---------- Home Page -----------
 @app.route("/")
-def get_home():
+def home():
     return render_template('home.html')
 
 # ---------- About Page -----------
+
+
 @app.route("/about")
-def get_about():
+def about():
     return render_template('about.html')
 
 # ---------- Studios Page -----------
+
+
 @app.route("/studios")
-def get_studios():
+def studios():
     return render_template('studios.html')
 
 # ---------- Services Page -----------
+
+
 @app.route("/services")
-def get_services():
+def services():
     return render_template('services.html')
 
 # ---------- FAQ Page -----------
+
+
 @app.route("/faq")
-def get_faq():
+def faq():
     return render_template('faq.html')
 
 # ---------- Availability Page -----------
+
+
 @app.route("/availability")
-def get_availability():
+def availability():
     return render_template('availability.html')
 
 # ---------- Booking Page -----------
+
+
 @app.route("/booking")
-def get_booking():
+def booking():
     return render_template('booking.html')
 
 
-# ---------- Bookings (all) Page -----------
-@app.route("/bookings")
-def bookings():
-    return render_template("bookings.html", all_bookings = Booking.select_all_bookings())
+# # ---------- Bookings (all) Page -----------
+# @app.route("/bookings")
+# def bookings():
+#     return render_template("bookings.html", all_bookings = Booking.select_all_bookings())
 
 
-# ---------- Bookings (one) Page -----------
-@app.route("/bookings/<id>")
-def bookings_one(id):
-    return render_template("show_booking.html", booking = Booking.get_one({"id":id}))
+# # ---------- Bookings (one) Page -----------
+# @app.route("/bookings/<id>")
+# def bookings_one(id):
+#     return render_template("show_booking.html", booking = Booking.get_one({"id":id}))
 
 
 # ------------------------------------------------------
@@ -63,30 +75,42 @@ def bookings_one(id):
 @app.route('/insert/booking', methods=["POST"])
 def insert_booking():
     data = {
-        "name": request.form["name"],
+        "start": {
+            "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + "-07:00"),
+            "timeZone": "America/Los_Angeles"
+        },
+        "end": {
+            "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + "-07:00"),
+            "timeZone": "America/Los_Angeles"
+        },
+        "summary": request.form["name"],
+        # 'attendees': [
+        #     {'email': request.form["email"]},
+        # ]
     }
-    Booking.insert_new_booking(data)
-    return redirect('/')
+    print(data)
+    Booking.insert_booking(data, studio_calendar(request.form["studio"]))
+    return redirect('/booking')
 
 
-# ---------- Update Booking Post -----------
-@app.route('/bookings/<id>/update', methods=["POST"])
-def edit_booking(id):
-    data = {
-        "id": id,
-        "name": request.form["name"],
-    }
-    Booking.update_booking(data)
-    return redirect('/')
+# # ---------- Update Booking Post -----------
+# @app.route('/bookings/<id>/update', methods=["POST"])
+# def edit_booking(id):
+#     data = {
+#         "id": id,
+#         "name": request.form["name"],
+#     }
+#     Booking.update_booking(data)
+#     return redirect('/')
 
 
-# ---------- Delete Booking Post -----------
-@app.route('/bookings/<id>/delete')
-def delete_booking(id):
+# # ---------- Delete Booking Post -----------
+# @app.route('/bookings/<id>/delete')
+# def delete_booking(id):
 
-    data = {"id": id}
-    Booking.delete(data)
-    return redirect('/')
+#     data = {"id": id}
+#     Booking.delete(data)
+#     return redirect('/')
 
 
 # # ---------- Bcrypt Password Post -----------

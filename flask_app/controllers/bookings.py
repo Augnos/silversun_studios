@@ -76,17 +76,17 @@ def booking():
 def insert_booking():
     data = {
         "start": {
-            "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + "-07:00"),
+            "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + ":00-07:00"),
             "timeZone": "America/Los_Angeles"
         },
         "end": {
-            "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + "-07:00"),
+            "dateTime": (str(request.form["date"]) + "T" + str(request.form["end_time"]) + ":00-07:00"),
             "timeZone": "America/Los_Angeles"
         },
         "summary": request.form["name"],
-        # 'attendees': [
-        #     {'email': request.form["email"]},
-        # ]
+        'attendees': [
+            {'email': request.form["email"]},
+        ]
     }
     print(data)
     Booking.insert_booking(data, studio_calendar(request.form["studio"]))

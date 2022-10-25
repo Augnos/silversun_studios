@@ -4,7 +4,7 @@ from flask_app.models.Google import create_service
 CLIENT_SECRET_FILE = 'flask_app/config/credentials.json'
 API_NAME = 'calendar'
 API_VERSION = 'v3'
-SCOPES = ['https://www.googleapis.com/auth/calendar']
+SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
 service = create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
 

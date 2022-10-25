@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request
+from flask import render_template, redirect, request, flash
 from flask_app import app
 from flask_app.models.booking import Booking, studio_calendar
 
@@ -21,6 +21,31 @@ from flask_app.models.booking import Booking, studio_calendar
 # ---------- Insert New Booking Post -----------
 @app.route('/insert/booking', methods=["POST"])
 def insert_booking():
+    formError = False
+    
+    if not request.form["name"]:
+        flash("A name (or event title) is required.")
+        formError = True
+    
+    if not request.form["date"]:
+        flash("Date is required.")
+        formError = True
+    
+    if request.form["start_time"] > request.form["end_time"]:
+        flash("Start time must be before end time.")
+        formError = True
+    
+    if not request.form["start_time"]:
+        flash("Start time is required.")
+        formError = True
+    
+    if not request.form["end_time"]:
+        flash("End time is required.")
+        formError = True
+    
+    if formError: 
+        return redirect('/booking')
+    
     data = {
         "start": {
             "dateTime": (str(request.form["date"]) + "T" + str(request.form["start_time"]) + ":00-07:00"),
@@ -31,10 +56,11 @@ def insert_booking():
             "timeZone": "America/Los_Angeles"
         },
         "summary": request.form["name"],
-        'attendees': [
-            {'email': request.form["email"]},
-        ]
+        # 'attendees': [
+        #     {'email': request.form["email"]},
+        # ]
     }
+    
     print(data)
     Booking.insert_booking(data, studio_calendar(request.form["studio"]))
     return redirect('/booking')

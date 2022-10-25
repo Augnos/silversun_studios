@@ -65,9 +65,12 @@
       <div class="row align-items-center justify-content-between flex-row-reverse">
         <div class="col-auto mx-auto">
           <h2 class="text-center">Book studio time today!</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore quidem maxime illum dolor,
-            possimus incidunt? Aliquam quam necessitatibus provident, repellendus voluptatum, consequuntur
-            rerum magnam, porro assumenda qui sapiente voluptate quisquam?</p>
+          <p>Developer note: This is a demo. The calendars below are live Google resource calendars posing as studio
+            availability. All events are pre-filled or created by others viewing the demo.</p>
+          <p>Email is not collected. Only the name (event title), studio selection, start time, and end time in the
+            below form is used to create an event on the Google resource calendars.</p>
+          <p>A production version could be used to send invites to recipients via the email enterred below. A future
+            version of the demo will block conflicting events and use a payment gateway prior to booking.</p>
         </div>
       </div>
     </div>
@@ -78,13 +81,23 @@
     <div class="container-md">
       <div class="row flex-row-reverse justify-content-between">
 
+
         <!-- Booking Form -->
         <form action="/insert/booking" method="post" class="col-lg-5 col-12 pb-5">
+
+          {% with messages = get_flashed_messages() %}
+          {% if messages %}
+          {% for message in messages %}
+          <p class="text-danger">{{message}}</p>
+          {% endfor %}
+          {% endif %}
+          {% endwith %}
 
           <!-- Contact Info -->
           <div class="row mb-3">
             <div class="col">
-              <input name="name" type="text" class="form-control" placeholder="First and last name" aria-label="name">
+              <input name="name" type="text" class="form-control" placeholder="* Full name (Event title)"
+                aria-label="name">
             </div>
           </div>
           <div class="row mb-3">
@@ -97,7 +110,7 @@
 
             <!-- Studio Selection -->
             <div class="col-sm-6">
-              <legend class="col-form-label col-sm-10 pt-0">Select Studio</legend>
+              <legend class="col-form-label col-sm-10 pt-0"><span class="text-danger">*</span> Select Studio</legend>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="studio" id="studio_a" value="studio_a" checked>
                 <label class="form-check-label" for="studio_a">
@@ -131,7 +144,7 @@
               <!-- Date -->
               <div class="row mb-3">
                 <div class="col-8">
-                  <legend class="col-form-label col-sm-10 pt-0">Select Date</legend>
+                  <legend class="col-form-label col-sm-10 pt-0"><span class="text-danger">*</span> Select Date</legend>
                   <input name="date" type="date" class="form-control" aria-label="date">
                 </div>
               </div>
@@ -139,11 +152,11 @@
               <!-- Start and End Time -->
               <div class="row mb-3">
                 <div class="col-6">
-                  <legend class="col-form-label col-sm-10 pt-0">Start Time</legend>
+                  <legend class="col-form-label col-sm-10 pt-0"><span class="text-danger">*</span> Start Time</legend>
                   <input name="start_time" type="time" class="form-control" aria-label="time">
                 </div>
                 <div class="col-6">
-                  <legend class="col-form-label col-sm-10 pt-0">End Time</legend>
+                  <legend class="col-form-label col-sm-10 pt-0"><span class="text-danger">*</span> End Time</legend>
                   <input name="end_time" type="time" class="form-control" aria-label="time">
                 </div>
               </div>

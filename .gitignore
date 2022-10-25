@@ -1,5 +1,6 @@
 .DS_Store
 credentials.json
+credentials_ec2.json
 token.json
 Google.cpython-310.pyc
 token_files/

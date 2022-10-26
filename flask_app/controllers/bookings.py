@@ -1,12 +1,13 @@
-from flask import render_template, redirect, request, flash
+from flask import redirect, request, flash
 from flask_app import app
 from flask_app.models.booking import Booking, studio_calendar
 
+
+# Google Cal SELECT Route templates to get studio events. Will implement in version 2.
 # # ---------- Bookings (all) Page -----------
 # @app.route("/bookings")
 # def bookings():
 #     return render_template("bookings.html", all_bookings = Booking.select_all_bookings())
-
 
 # # ---------- Bookings (one) Page -----------
 # @app.route("/bookings/<id>")
@@ -18,31 +19,27 @@ from flask_app.models.booking import Booking, studio_calendar
 # -------------------- POST Routes ---------------------
 # ------------------------------------------------------
 
-# ---------- Insert New Booking Post -----------
+# ---------- INSERT New Booking Post -----------
 @app.route('/insert/booking', methods=["POST"])
 def insert_booking():
-    formError = False
     
+    # Form input error handling
+    formError = False
     if not request.form["name"]:
         flash("A name (or event title) is required.")
         formError = True
-    
     if not request.form["date"]:
         flash("Date is required.")
         formError = True
-    
     if request.form["start_time"] > request.form["end_time"]:
         flash("Start time must be before end time.")
         formError = True
-    
     if not request.form["start_time"]:
         flash("Start time is required.")
         formError = True
-    
     if not request.form["end_time"]:
         flash("End time is required.")
         formError = True
-    
     if formError: 
         return redirect('/booking')
     
@@ -66,7 +63,7 @@ def insert_booking():
     return redirect('/booking')
 
 
-# # ---------- Update Booking Post -----------
+# # ---------- UPDATE Booking Post -----------
 # @app.route('/bookings/<id>/update', methods=["POST"])
 # def edit_booking(id):
 #     data = {
@@ -77,29 +74,10 @@ def insert_booking():
 #     return redirect('/')
 
 
-# # ---------- Delete Booking Post -----------
+# # ---------- DELETE Booking Post -----------
 # @app.route('/bookings/<id>/delete')
 # def delete_booking(id):
 
 #     data = {"id": id}
 #     Booking.delete(data)
 #     return redirect('/')
-
-
-# # ---------- Bcrypt Password Post -----------
-# @app.route('/register/user', methods=['POST'])
-# def register():
-#     # validate the form here ...
-#     # create the hash
-#     pw_hash = bcrypt.generate_password_hash(request.form['password'])
-#     print(pw_hash)
-#     # put the pw_hash into the data dictionary
-#     data = {
-#         "username": request.form['username'],
-#         "password" : pw_hash
-#     }
-#     # Call the save @classmethod on User
-#     user_id = User.save(data)
-#     # store user id into session
-#     session['user_id'] = user_id
-#     return redirect("/dashboard")

@@ -1,14 +1,15 @@
 # from flask_app.config.mysqlconnection import connectToMySQL
-from flask_app.models.Google import create_service
+from flask_app.models.auth import create_service
 
-CLIENT_SECRET_FILE = 'flask_app/config/credentials.json'
-API_NAME = 'calendar'
-API_VERSION = 'v3'
-SCOPES = ['https://www.googleapis.com/auth/calendar.events']
+# Auth service build parameters
+client_secret_file = 'flask_app/config/credentials.json'
+api_name = 'calendar'
+api_version = 'v3'
+scopes = ['https://www.googleapis.com/auth/calendar.events']
 
-service = create_service(CLIENT_SECRET_FILE, API_NAME, API_VERSION, SCOPES)
+service = create_service(client_secret_file, api_name, api_version, scopes)
 
-
+# Returns calendar ID depending on studio selected
 def studio_calendar(studio):
     if studio == "studio_a":
         return "c_1887fvbjsimgghkbmqeu2kirblq9q@resource.calendar.google.com"
@@ -18,9 +19,6 @@ def studio_calendar(studio):
         return "c_18896sfskcn9mg25l00tet4jannn2@resource.calendar.google.com"
     if studio == "live_room":
         return "c_1885ahjvknvmogg9ldra4ls1m37fc@resource.calendar.google.com"
-
-# def RFC_converter(date, time):
-
 
 class Booking:
     def __init__(self, data):

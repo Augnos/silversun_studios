@@ -10,5 +10,4 @@ Google Calendar API integration is also a goal, for studios that use Google Work
 
 Version 1.0 was completed and deployed Oct 21, 2022. Future versions will add functionality to block conflicting events, and provide a payment gateway prior to booking studio time.
 
-Prototype:
 ![Silversun Studios](https://user-images.githubusercontent.com/110561217/198708323-9507a83b-146f-47fb-9e77-df71c1f995c6.svg)

@@ -9,3 +9,5 @@ This was a real-world need while I worked at Pyramind Studios in San Francisco f
 Google Calendar API integration is also a goal, for studios that use Google Workspace resources to track and manage sessions and rental of specific rooms. At Pyramind, these resource calendars and the events on them were an essential part of our day-to-day operations.
 
 Version 1.0 was completed and deployed Oct 21, 2022. Future versions will add functionality to block conflicting events, and provide a payment gateway prior to booking studio time.
+
+![Silversun Studios](https://user-images.githubusercontent.com/110561217/198708323-9507a83b-146f-47fb-9e77-df71c1f995c6.svg)

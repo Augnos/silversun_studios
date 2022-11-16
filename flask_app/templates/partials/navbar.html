@@ -1,0 +1,67 @@
+<nav class="navbar navbar-dark navbar-expand-lg">
+    <div class="container-md">
+        <a class="navbar-brand" href="/">
+            <img src="{{ url_for('static', filename='img/logos/microphone_white.png') }}" alt="studio logo"
+                class="me-3">
+            Silversun Studios
+        </a>
+        <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex">
+                <li class="nav-item">
+                    <a  {% if home %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if about %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/about">About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if studios %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/studios">Studios
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if services %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/services">Services
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if faq %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/faq">FAQ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if availability %} class="nav-link text-white" 
+                        {% else %} class="nav-link" 
+                        {% endif %} 
+                        href="/availability">Availability
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a  {% if booking %} class="btn btn-outline-light" 
+                        {% else %} class="btn btn-outline-primary" 
+                        {% endif %} 
+                        href="/booking">Book Now!
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

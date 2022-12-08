@@ -1,4 +1,4 @@
-# [Silversun Studios](https://silversun.augnos.dev
+# [Silversun Studios](https://silversun.augnos.dev)
 
 Technologies used: Python, Flask, Bootstrap 5, AWS EC2, Google Calendar API
 
